@@ -1,0 +1,2376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EFood Website</title>
+  <meta name="description" content="EFood description">
+  <meta name="robots" content="index,follow">
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#ff7a50">
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <meta name="apple-mobile-web-app-title" content="EFood - Website">
+  <meta name="application-name" content="EFood - Website">
+  <meta name="msapplication-TileColor" content="#2b5797">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="EFood - Website">
+  <meta property="og:description" content="EFood description">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="EFood - Website">
+  <meta name="twitter:description" content="EFood description">
+  <meta name="twitter:image" content="">
+
+  <link rel="preload" as="style" href="./assets/css/libs.min.css">
+  <link rel="preload" as="style" href="./assets/css/style.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="./assets/css/libs.min.css">
+  <link rel="stylesheet" href="./assets/css/style.min.css">
+
+  <style>
+    .loader {
+      transition: opacity 275ms ease-out;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fff;
+      z-index: 99999;
+      opacity: 1;
+    }
+
+    .loader img {
+      width: auto;
+      height: 120px;
+    }
+  </style>
+</head>
+
+<body class="page">
+  <div class="page__light">
+    <img src="./assets/images/background-light.svg" alt="Background lights">
+  </div>
+  <div class="loader">
+    <img src="./assets/images/loader.svg" alt="Loader">
+  </div>
+  <div class="wrapper flex flex-column">
+    <wc-toast position="top-right"></wc-toast>
+    <header class="header header_indented">
+      <div class="container">
+        <div class="header__inner flex items-center">
+          <div class="logo grow-1">
+            <svg class="icon">
+              <use xlink:href="./assets/images/icons.svg#logo"></use>
+            </svg>
+          </div>
+          <nav class="navigation flex items-center shrink-0">
+            <div class="navigation__menu menu" data-mobile-body>
+              <span class="menu__close" data-mobile-close-button>
+                <svg>
+                  <use xlink:href="./assets/images/icons.svg#menu-close"></use>
+                </svg>
+              </span>
+              <ul class="menu__list">
+                <li class="menu__item menu__item_active">
+                  <a href="#">Home</a>
+                </li>
+                <li class="menu__item">
+                  <a href="#">Service</a>
+                </li>
+                <li class="menu__item">
+                  <a href="#">Top cities</a>
+                </li>
+                <li class="menu__item">
+                  <a href="#">Contract</a>
+                </li>
+              </ul>
+            </div>
+            <div class="navigation__actions flex items-center">
+              <div class="navigation__actions-item">
+                <button class="button button_normal-icon button_icon">
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="./assets/images/icons.svg#search"></use>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+
+              <div class="navigation__actions-item">
+                <button class="button button_normal-icon button_icon">
+                  <span class="icon">
+                    <span class="icon__badge">4</span>
+                    <svg>
+                      <use xlink:href="./assets/images/icons.svg#cart"></use>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <div class="navigation__actions-item d-xs-none">
+                <button class="button button_primary button_big">Sign Up</button>
+              </div>
+            </div>
+
+            <button class="menu-open button button_normal-icon button_icon" data-mobile-button>
+              <span class="icon">
+                <svg>
+                  <use xlink:href="./assets/images/icons.svg#menu"></use>
+                </svg>
+              </span>
+            </button>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="main grow-1 overflow-h">
+      <section class="section section_hero">
+        <div class="container">
+          <div class="hero flex items-center">
+            <div class="hero__text" data-animate-on-scroll data-animate-class="fade-in-bottom"
+              data-animate-delay="900ms">
+              <h1 class="text-level-1">Super Fast <span class="text-color-primary">Food Delivery</span> Service</h1>
+              <p class="hero__description">We provide super fast-delivery service. Let’s use our services right now and
+                get
+                discounts of up to 50%</p>
+              <div class="hero__buttons">
+                <button class="button button_big button_primary" data-modal-button="hero">Explore Food</button>
+                <button class="button button_big"><u>Download App</u></button>
+              </div>
+            </div>
+            <div class="hero__image" data-animate-on-scroll data-animate-class="fade-in-right"
+              data-animate-delay="300ms">
+              <picture>
+                <source srcset="./assets/images/hero-image.avif" type="image/avif">
+                <source srcset="./assets/images/hero-image.webp" type="image/webp">
+                <img src="./assets/images/hero-image/hero-image.png" alt="Hero image">
+              </picture>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section_categories">
+        <div class="container">
+          <h2 class="text-level-3 text-center" data-animate-on-scroll data-animate-class="fade-in-bottom">Our popular
+            <span class="text-color-primary">Category</span>
+          </h2>
+          <div class="categories-tab categories-tab_indented" data-tab>
+            <div class="categories-tab__header flex flex-wrap justify-center items-center" data-tab-header>
+              <div class="categories-tab__header-item" data-tab-item data-active data-animate-on-scroll
+                data-animate-class="fade-in-bottom" data-animate-delay="100ms">
+                <button class="categories-tab__button button">
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="./assets/images/icons.svg#burger"></use>
+                    </svg>
+                  </span>
+                  <span>Burger</span>
+                </button>
+              </div>
+
+              <div class="categories-tab__header-item" data-tab-item data-animate-on-scroll
+                data-animate-class="fade-in-bottom" data-animate-delay="200ms">
+                <button class="categories-tab__button button">
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="./assets/images/icons.svg#pizza"></use>
+                    </svg>
+                  </span>
+                  <span>Pizza</span>
+                </button>
+              </div>
+
+              <div class="categories-tab__header-item" data-tab-item data-animate-on-scroll
+                data-animate-class="fade-in-bottom" data-animate-delay="300ms">
+                <button class="categories-tab__button button">
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="./assets/images/icons.svg#sandwich"></use>
+                    </svg>
+                  </span>
+                  <span>Sandwich</span>
+                </button>
+              </div>
+
+              <div class="categories-tab__header-item" data-tab-item data-animate-on-scroll
+                data-animate-class="fade-in-bottom" data-animate-delay="400ms">
+                <button class="categories-tab__button button">
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="./assets/images/icons.svg#asian"></use>
+                    </svg>
+                  </span>
+                  <span>Asian Food</span>
+                </button>
+              </div>
+
+              <div class="categories-tab__header-item" data-tab-item data-animate-on-scroll
+                data-animate-class="fade-in-bottom" data-animate-delay="500ms">
+                <button class="categories-tab__button button">
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="./assets/images/icons.svg#dish"></use>
+                    </svg>
+                  </span>
+                  <span>Set Menu</span>
+                </button>
+              </div>
+            </div>
+            <div class="categories-tab__content" data-animate-on-scroll data-animate-class="fade-in-bottom"
+              data-animate-delay="500ms">
+              <div class="categories-tab__body" data-tab-body data-active>
+
+                <div class="categories-slider swiper flex flex-column items-center">
+                  <div class="categories-slider__wrapper swiper-wrapper">
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/burger/image-1.avif" type="image/avif">
+                            <source srcset="./assets/images/products/burger/image-1.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/burger/image-1.jpeg" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Cheeseburger With Salad</h4>
+
+
+                        <span class="categories-card__price">$18.00</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/burger/image-2.avif" type="image/avif">
+                            <source srcset="./assets/images/products/burger/image-2.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/burger/image-2.jpeg" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Beef Burger</h4>
+
+
+                        <span class="categories-card__price">$15.00</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/burger/image-3.avif" type="image/avif">
+                            <source srcset="./assets/images/products/burger/image-3.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/burger/image-3.jpeg" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Royel Cheeseburger</h4>
+
+
+                        <span class="categories-card__price">$16.00</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/burger/image-4.avif" type="image/avif">
+                            <source srcset="./assets/images/products/burger/image-4.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/burger/image-4.jpeg" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Black Gambugrer </h4>
+
+
+                        <span class="categories-card__price">$14.00</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/burger/image-5.avif" type="image/avif">
+                            <source srcset="./assets/images/products/burger/image-5.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/burger/image-5.jpeg" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Chicken Burger</h4>
+
+
+                        <span class="categories-card__price">$15.00</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/burger/image-3.avif" type="image/avif">
+                            <source srcset="./assets/images/products/burger/image-3.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/burger/image-3.jpeg" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Dranburger</h4>
+
+
+                        <span class="categories-card__price">$99.00</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/burger/image-2.avif" type="image/avif">
+                            <source srcset="./assets/images/products/burger/image-2.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/burger/image-2.jpeg" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Double Beef Burger</h4>
+
+
+                        <span class="categories-card__price">$24.00</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="categories-slider__navigation">
+                    <div class="categories-slider__arrow categories-slider__arrow_prev icon">
+                      <svg>
+                        <use xlink:href="./assets/images/icons.svg#arrow-prev"></use>
+                      </svg>
+                    </div>
+
+                    <ul class="categories-slider__dots"></ul>
+
+                    <div class="categories-slider__arrow categories-slider__arrow_next icon">
+                      <svg>
+                        <use xlink:href="./assets/images/icons.svg#arrow-next"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="categories-tab__body" data-tab-body>
+
+                <div class="categories-slider swiper flex flex-column items-center">
+                  <div class="categories-slider__wrapper swiper-wrapper">
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/pizza/image-1.avif" type="image/avif">
+                            <source srcset="./assets/images/products/pizza/image-1.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/pizza/image-1.png" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Карбонара</h4>
+
+
+                        <span class="categories-card__price">$18.49</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/pizza/image-2.avif" type="image/avif">
+                            <source srcset="./assets/images/products/pizza/image-2.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/pizza/image-2.png" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Пепперони Делюкс 100</h4>
+
+
+                        <span class="categories-card__price">$30.49</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/pizza/image-3.avif" type="image/avif">
+                            <source srcset="./assets/images/products/pizza/image-3.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/pizza/image-3.png" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Чеддерони</h4>
+
+
+                        <span class="categories-card__price">$18.49</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/pizza/image-4.avif" type="image/avif">
+                            <source srcset="./assets/images/products/pizza/image-4.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/pizza/image-4.png" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">4 Сезона</h4>
+
+
+                        <span class="categories-card__price">$28.49</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/pizza/image-5.avif" type="image/avif">
+                            <source srcset="./assets/images/products/pizza/image-5.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/pizza/image-5.png" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Мюнхенская</h4>
+
+
+                        <span class="categories-card__price">$22.99</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/pizza/image-6.avif" type="image/avif">
+                            <source srcset="./assets/images/products/pizza/image-6.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/pizza/image-6.png" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Болоньезе</h4>
+
+
+                        <span class="categories-card__price">$18.49</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/pizza/image-7.avif" type="image/avif">
+                            <source srcset="./assets/images/products/pizza/image-7.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/pizza/image-7.png" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">5 Сыров</h4>
+
+
+                        <span class="categories-card__price">$20.99</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="categories-slider__navigation">
+                    <div class="categories-slider__arrow categories-slider__arrow_prev icon">
+                      <svg>
+                        <use xlink:href="./assets/images/icons.svg#arrow-prev"></use>
+                      </svg>
+                    </div>
+
+                    <ul class="categories-slider__dots"></ul>
+
+                    <div class="categories-slider__arrow categories-slider__arrow_next icon">
+                      <svg>
+                        <use xlink:href="./assets/images/icons.svg#arrow-next"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="categories-tab__body" data-tab-body>
+
+                <div class="categories-slider swiper flex flex-column items-center">
+                  <div class="categories-slider__wrapper swiper-wrapper">
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/sandwich/image-1.avif" type="image/avif">
+                            <source srcset="./assets/images/products/sandwich/image-1.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/sandwich/image-1.png" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Sandwich 1</h4>
+
+
+                        <span class="categories-card__price">$18.00</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/sandwich/image-2.avif" type="image/avif">
+                            <source srcset="./assets/images/products/sandwich/image-2.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/sandwich/image-2.png" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Sandwich 2</h4>
+
+
+                        <span class="categories-card__price">$15.00</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/sandwich/image-3.avif" type="image/avif">
+                            <source srcset="./assets/images/products/sandwich/image-3.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/sandwich/image-3.png" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Sandwich 3</h4>
+
+
+                        <span class="categories-card__price">$16.00</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/sandwich/image-4.avif" type="image/avif">
+                            <source srcset="./assets/images/products/sandwich/image-4.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/sandwich/image-4.png" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Sandwich 4</h4>
+
+
+                        <span class="categories-card__price">$14.00</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/sandwich/image-5.avif" type="image/avif">
+                            <source srcset="./assets/images/products/sandwich/image-5.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/sandwich/image-5.png" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Sandwich 5</h4>
+
+
+                        <span class="categories-card__price">$15.00</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/sandwich/image-6.avif" type="image/avif">
+                            <source srcset="./assets/images/products/sandwich/image-6.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/sandwich/image-6.png" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Sandwich 6</h4>
+
+
+                        <span class="categories-card__price">$99.00</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="categories-slider__navigation">
+                    <div class="categories-slider__arrow categories-slider__arrow_prev icon">
+                      <svg>
+                        <use xlink:href="./assets/images/icons.svg#arrow-prev"></use>
+                      </svg>
+                    </div>
+
+                    <ul class="categories-slider__dots"></ul>
+
+                    <div class="categories-slider__arrow categories-slider__arrow_next icon">
+                      <svg>
+                        <use xlink:href="./assets/images/icons.svg#arrow-next"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="categories-tab__body" data-tab-body>
+
+                <div class="categories-slider swiper flex flex-column items-center">
+                  <div class="categories-slider__wrapper swiper-wrapper">
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/sushi/image-1.avif" type="image/avif">
+                            <source srcset="./assets/images/products/sushi/image-1.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/sushi/image-1.jpg" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Sushi 1</h4>
+
+
+                        <span class="categories-card__price">$18.00</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/sushi/image-2.avif" type="image/avif">
+                            <source srcset="./assets/images/products/sushi/image-2.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/sushi/image-2.jpg" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Sushi 2</h4>
+
+
+                        <span class="categories-card__price">$15.00</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/sushi/image-3.avif" type="image/avif">
+                            <source srcset="./assets/images/products/sushi/image-3.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/sushi/image-3.jpg" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Sushi 3</h4>
+
+
+                        <span class="categories-card__price">$16.00</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/sushi/image-4.avif" type="image/avif">
+                            <source srcset="./assets/images/products/sushi/image-4.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/sushi/image-4.jpg" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Sushi 4</h4>
+
+
+                        <span class="categories-card__price">$14.00</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/sushi/image-5.avif" type="image/avif">
+                            <source srcset="./assets/images/products/sushi/image-5.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/sushi/image-5.jpg" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Sushi 5</h4>
+
+
+                        <span class="categories-card__price">$15.00</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/sushi/image-6.avif" type="image/avif">
+                            <source srcset="./assets/images/products/sushi/image-6.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/sushi/image-6.jpg" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Sushi 6</h4>
+
+
+                        <span class="categories-card__price">$99.00</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="categories-slider__navigation">
+                    <div class="categories-slider__arrow categories-slider__arrow_prev icon">
+                      <svg>
+                        <use xlink:href="./assets/images/icons.svg#arrow-prev"></use>
+                      </svg>
+                    </div>
+
+                    <ul class="categories-slider__dots"></ul>
+
+                    <div class="categories-slider__arrow categories-slider__arrow_next icon">
+                      <svg>
+                        <use xlink:href="./assets/images/icons.svg#arrow-next"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="categories-tab__body" data-tab-body>
+
+                <div class="categories-slider swiper flex flex-column items-center">
+                  <div class="categories-slider__wrapper swiper-wrapper">
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/set/image-1.avif" type="image/avif">
+                            <source srcset="./assets/images/products/set/image-1.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/set/image-1.png" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Set 1</h4>
+
+
+                        <span class="categories-card__price">$18.00</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/set/image-2.avif" type="image/avif">
+                            <source srcset="./assets/images/products/set/image-2.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/set/image-2.png" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Set 2</h4>
+
+
+                        <span class="categories-card__price">$15.00</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/set/image-3.avif" type="image/avif">
+                            <source srcset="./assets/images/products/set/image-3.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/set/image-3.png" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Set 3</h4>
+
+
+                        <span class="categories-card__price">$16.00</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/set/image-4.avif" type="image/avif">
+                            <source srcset="./assets/images/products/set/image-4.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/set/image-4.png" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Set 4</h4>
+
+
+                        <span class="categories-card__price">$14.00</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/set/image-5.avif" type="image/avif">
+                            <source srcset="./assets/images/products/set/image-5.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/set/image-5.png" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Set 5</h4>
+
+
+                        <span class="categories-card__price">$15.00</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+
+                    <div class="categories-slider__slide swiper-slide">
+                      <div class="categories-card">
+
+                        <div class="categories-card__image">
+                          <picture>
+                            <source srcset="./assets/images/products/set/image-6.avif" type="image/avif">
+                            <source srcset="./assets/images/products/set/image-6.webp" type="image/webp">
+                            <img loading="lazy" src="./assets/images/products/set/image-6.png" alt="">
+                          </picture>
+                        </div>
+
+
+                        <div class="categories-card__rating">
+                          <div class="rating rating_hovered">
+                            <div class="rating__back">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                            <div class="rating__front" style="width: 42%">
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                              <span class="icon-css icon-css_mask icon-css_star"></span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <h4 class="categories-card__name">Set 6</h4>
+
+
+                        <span class="categories-card__price">$99.00</span>
+
+
+                        <button class="categories-card__button button button_normal button_primary">Add to Cart</button>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="categories-slider__navigation">
+                    <div class="categories-slider__arrow categories-slider__arrow_prev icon">
+                      <svg>
+                        <use xlink:href="./assets/images/icons.svg#arrow-prev"></use>
+                      </svg>
+                    </div>
+
+                    <ul class="categories-slider__dots"></ul>
+
+                    <div class="categories-slider__arrow categories-slider__arrow_next icon">
+                      <svg>
+                        <use xlink:href="./assets/images/icons.svg#arrow-next"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section_delivery">
+        <div class="container">
+          <div class="delivery flex justify-between items-center">
+            <div class="delivery__image" data-animate-on-scroll data-animate-class="fade-in-left"
+              data-animate-delay="300ms">
+              <picture>
+                <source srcset="./assets/images/delivery.avif" type="image/avif">
+                <source srcset="./assets/images/delivery.webp" type="image/webp">
+                <img src="./assets/images/delivery.png" alt="Delivery">
+              </picture>
+            </div>
+            <div class="delivery__inner" data-animate-on-scroll data-animate-class="fade-in-bottom"
+              data-animate-delay="900ms">
+              <h2 class="text-level-3 capitalize"><span class="text-color-primary">Stay</span> at home, we will Provide
+                <span class="text-color-primary">good food</span>
+              </h2>
+              <div class="delivery__description">
+                <p>We provide tasty food and superfast delivery at your home. Let’s use our services
+                  right now and get discounts of up to 50%.</p>
+              </div>
+
+              <ul class="delivery__list delivery-list">
+                <li class="delivery-item">
+                  <div class="delivery-item__icon">
+                    <span class="icon-css icon-css_big icon-css_mask icon-css_stopwatch"></span>
+                    <div class="delivery-item__bubble"></div>
+                  </div>
+                  <p class="delivery-item__text text-big capitalize">fasted delivery in 30 Minutes</p>
+                </li>
+                <li class="delivery-item indent-m-top-2">
+                  <div class="delivery-item__icon">
+                    <span class="icon-css icon-css_big icon-css_mask icon-css_delivery"></span>
+                    <div class="delivery-item__bubble"></div>
+                  </div>
+                  <p class="delivery-item__text text-big capitalize">300+ delivery men</p>
+                </li>
+                <li class="delivery-item indent-m-top-2">
+                  <div class="delivery-item__icon">
+                    <span class="icon-css icon-css_big icon-css_mask icon-css_shop"></span>
+                    <div class="delivery-item__bubble"></div>
+                  </div>
+                  <p class="delivery-item__text text-big capitalize">500+ restaurant & cafe shop</p>
+                </li>
+              </ul>
+
+              <button class="delivery__button button button_big button_primary button_rounded">See more</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section_restaurant">
+        <div class="container">
+          <h2 class="text-level-3 text-center capitalize" data-animate-on-scroll data-animate-class="fade-in-bottom">Top
+            Food
+            <span class="text-color-primary">restaurant</span>
+          </h2>
+          <div class="restaurant restaurant_indented">
+
+            <div class="restaurant__items">
+              <div class="restaurant-card" data-animate-on-scroll data-animate-class="fade-in-bottom"
+                data-animate-delay="200ms">
+
+                <div class="restaurant-card__image">
+                  <picture>
+                    <source srcset="./assets/images/restoraunt/image-1.avif" type="image/avif">
+                    <source srcset="./assets/images/restoraunt/image-1.webp" type="image/webp">
+                    <img src="./assets/images/restoraunt/image-1.jpeg" alt="Card Blaze Pizza">
+                  </picture>
+                </div>
+
+                <div class="restaurant-card__inner">
+
+                  <h4 class="restaurant-card__title">Blaze Pizza</h4>
+
+                  <div class="restaurant-card__meta flex justify-between items-center">
+
+                    <div class="restaurant-card__time flex items-center">
+                      <span class="icon">
+                        <svg>
+                          <use xlink:href="./assets/images/icons.svg#timer"></use>
+                        </svg>
+                      </span>
+                      <span class="text-caption upper">11.00 AM - 10.00 PM</span>
+                    </div>
+
+
+                    <button
+                      class="restaurant-card__button button button_small button_primary button_rounded button_icon">
+                      <span class="icon">
+                        <svg>
+                          <use xlink:href="./assets/images/icons.svg#arrow-button"></use>
+                        </svg>
+                      </span>
+                    </button>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="restaurant-card" data-animate-on-scroll data-animate-class="fade-in-bottom"
+                data-animate-delay="400ms">
+
+                <div class="restaurant-card__image">
+                  <picture>
+                    <source srcset="./assets/images/restoraunt/image-2.avif" type="image/avif">
+                    <source srcset="./assets/images/restoraunt/image-2.webp" type="image/webp">
+                    <img src="./assets/images/restoraunt/image-2.jpeg" alt="Card Pizza Ranch">
+                  </picture>
+                </div>
+
+                <div class="restaurant-card__inner">
+
+                  <h4 class="restaurant-card__title">Pizza Ranch</h4>
+
+                  <div class="restaurant-card__meta flex justify-between items-center">
+
+                    <div class="restaurant-card__time flex items-center">
+                      <span class="icon">
+                        <svg>
+                          <use xlink:href="./assets/images/icons.svg#timer"></use>
+                        </svg>
+                      </span>
+                      <span class="text-caption upper">09.00 AM - 10.00 PM</span>
+                    </div>
+
+
+                    <button
+                      class="restaurant-card__button button button_small button_primary button_rounded button_icon">
+                      <span class="icon">
+                        <svg>
+                          <use xlink:href="./assets/images/icons.svg#arrow-button"></use>
+                        </svg>
+                      </span>
+                    </button>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="restaurant-card" data-animate-on-scroll data-animate-class="fade-in-bottom"
+                data-animate-delay="600ms">
+
+                <div class="restaurant-card__image">
+                  <picture>
+                    <source srcset="./assets/images/restoraunt/image-3.avif" type="image/avif">
+                    <source srcset="./assets/images/restoraunt/image-3.webp" type="image/webp">
+                    <img src="./assets/images/restoraunt/image-3.jpeg" alt="Card Dion’s Pizza Hut">
+                  </picture>
+                </div>
+
+                <div class="restaurant-card__inner">
+
+                  <h4 class="restaurant-card__title">Dion’s Pizza Hut</h4>
+
+                  <div class="restaurant-card__meta flex justify-between items-center">
+
+                    <div class="restaurant-card__time flex items-center">
+                      <span class="icon">
+                        <svg>
+                          <use xlink:href="./assets/images/icons.svg#timer"></use>
+                        </svg>
+                      </span>
+                      <span class="text-caption upper">10.00 AM - 12.00 PM</span>
+                    </div>
+
+
+                    <button
+                      class="restaurant-card__button button button_small button_primary button_rounded button_icon">
+                      <span class="icon">
+                        <svg>
+                          <use xlink:href="./assets/images/icons.svg#arrow-button"></use>
+                        </svg>
+                      </span>
+                    </button>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="restaurant-card" data-animate-on-scroll data-animate-class="fade-in-bottom"
+                data-animate-delay="200ms">
+
+                <div class="restaurant-card__image">
+                  <picture>
+                    <source srcset="./assets/images/restoraunt/image-4.avif" type="image/avif">
+                    <source srcset="./assets/images/restoraunt/image-4.webp" type="image/webp">
+                    <img src="./assets/images/restoraunt/image-4.jpeg" alt="Card Royel Burger">
+                  </picture>
+                </div>
+
+                <div class="restaurant-card__inner">
+
+                  <h4 class="restaurant-card__title">Royel Burger</h4>
+
+                  <div class="restaurant-card__meta flex justify-between items-center">
+
+                    <div class="restaurant-card__time flex items-center">
+                      <span class="icon">
+                        <svg>
+                          <use xlink:href="./assets/images/icons.svg#timer"></use>
+                        </svg>
+                      </span>
+                      <span class="text-caption upper">11.00 AM - 10.00 PM</span>
+                    </div>
+
+
+                    <button
+                      class="restaurant-card__button button button_small button_primary button_rounded button_icon">
+                      <span class="icon">
+                        <svg>
+                          <use xlink:href="./assets/images/icons.svg#arrow-button"></use>
+                        </svg>
+                      </span>
+                    </button>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="restaurant-card" data-animate-on-scroll data-animate-class="fade-in-bottom"
+                data-animate-delay="400ms">
+
+                <div class="restaurant-card__image">
+                  <picture>
+                    <source srcset="./assets/images/restoraunt/image-5.avif" type="image/avif">
+                    <source srcset="./assets/images/restoraunt/image-5.webp" type="image/webp">
+                    <img src="./assets/images/restoraunt/image-5.jpeg" alt="Card KFC Restaurant">
+                  </picture>
+                </div>
+
+                <div class="restaurant-card__inner">
+
+                  <h4 class="restaurant-card__title">KFC Restaurant</h4>
+
+                  <div class="restaurant-card__meta flex justify-between items-center">
+
+                    <div class="restaurant-card__time flex items-center">
+                      <span class="icon">
+                        <svg>
+                          <use xlink:href="./assets/images/icons.svg#timer"></use>
+                        </svg>
+                      </span>
+                      <span class="text-caption upper">09.00 AM - 10.00 PM</span>
+                    </div>
+
+
+                    <button
+                      class="restaurant-card__button button button_small button_primary button_rounded button_icon">
+                      <span class="icon">
+                        <svg>
+                          <use xlink:href="./assets/images/icons.svg#arrow-button"></use>
+                        </svg>
+                      </span>
+                    </button>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="restaurant-card" data-animate-on-scroll data-animate-class="fade-in-bottom"
+                data-animate-delay="600ms">
+
+                <div class="restaurant-card__image">
+                  <picture>
+                    <source srcset="./assets/images/restoraunt/image-6.avif" type="image/avif">
+                    <source srcset="./assets/images/restoraunt/image-6.webp" type="image/webp">
+                    <img src="./assets/images/restoraunt/image-6.jpeg" alt="Card Star Food">
+                  </picture>
+                </div>
+
+                <div class="restaurant-card__inner">
+
+                  <h4 class="restaurant-card__title">Star Food</h4>
+
+                  <div class="restaurant-card__meta flex justify-between items-center">
+
+                    <div class="restaurant-card__time flex items-center">
+                      <span class="icon">
+                        <svg>
+                          <use xlink:href="./assets/images/icons.svg#timer"></use>
+                        </svg>
+                      </span>
+                      <span class="text-caption upper">10.00 AM - 12.00 PM</span>
+                    </div>
+
+
+                    <button
+                      class="restaurant-card__button button button_small button_primary button_rounded button_icon">
+                      <span class="icon">
+                        <svg>
+                          <use xlink:href="./assets/images/icons.svg#arrow-button"></use>
+                        </svg>
+                      </span>
+                    </button>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section_app">
+        <div class="container">
+          <div class="app flex items-center">
+            <div class="app__inner" data-animate-on-scroll data-animate-class="fade-in-bottom"
+              data-animate-delay="900ms">
+              <h1 class="text-level-3">Download Our <span class="text-color-primary">Mobile App</span></h1>
+              <p class="app__description">It's all at your fingertips -- the restaurants you love. Find the right food
+                to suit
+                your mood, and make the first bite last. Go ahead, download app and get 50% discount</p>
+              <div class="app__store flex flex-wrap items-center">
+                <div class="app__store-item">
+                  <picture>
+                    <source srcset="./assets/images/app-store.avif" type="image/avif">
+                    <source srcset="./assets/images/app-store.webp" type="image/webp">
+                    <img src="./assets/images/app-store.png" alt="App on app store">
+                  </picture>
+                </div>
+                <div class="app__store-item">
+                  <picture>
+                    <source srcset="./assets/images/google-play.avif" type="image/avif">
+                    <source srcset="./assets/images/google-play.webp" type="image/webp">
+                    <img src="./assets/images/google-play.png" alt="App on google play">
+                  </picture>
+                </div>
+              </div>
+            </div>
+            <div class="app__view flex justify-center" data-animate-on-scroll data-animate-class="fade-in-right"
+              data-animate-delay="300ms">
+              <div class="app__phones relative">
+                <div class="app__image app__image_left">
+                  <div class="ratio ratio_app-card">
+                    <picture>
+                      <source srcset="./assets/images/phone-image-2.avif" type="image/avif">
+                      <source srcset="./assets/images/phone-image-2.webp" type="image/webp">
+                      <img src="./assets/images/phone-image-2.jpeg" alt="Mobile app">
+                    </picture>
+                  </div>
+                </div>
+                <div class="app__image app__image_main">
+                  <div class="ratio ratio_app-card">
+                    <picture>
+                      <source srcset="./assets/images/phone-image-1.avif" type="image/avif">
+                      <source srcset="./assets/images/phone-image-1.webp" type="image/webp">
+                      <img src="./assets/images/phone-image-1.jpeg" alt="Mobile app">
+                    </picture>
+                  </div>
+                </div>
+                <div class="app__image app__image_right">
+                  <div class="ratio ratio_app-card">
+                    <picture>
+                      <source srcset="./assets/images/phone-image-3.avif" type="image/avif">
+                      <source srcset="./assets/images/phone-image-3.webp" type="image/webp">
+                      <img src="./assets/images/phone-image-3.jpeg" alt="Mobile app">
+                    </picture>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section_review">
+        <div class="container">
+          <h2 class="text-level-3 text-center" data-animate-on-scroll data-animate-class="fade-in-bottom">What Our
+            Client Are
+            <span class="text-color-primary">Saying</span>
+          </h2>
+          <div class="review review_indented flex items-center">
+            <div class="review__image review-image-slider swiper" data-animate-on-scroll
+              data-animate-class="fade-in-left" data-animate-delay="300ms">
+              <div class="review-image-slider__wrapper swiper-wrapper">
+                <div class="review-image-slide swiper-slide">
+                  <picture>
+                    <source srcset="./assets/images/clients.avif" type="image/avif">
+                    <source srcset="./assets/images/clients.webp" type="image/webp">
+                    <img src="./assets/images/clients.jpeg" alt="Review image">
+                  </picture>
+                </div>
+
+                <div class="review-image-slide swiper-slide">
+                  <picture>
+                    <source srcset="./assets/images/gena.avif" type="image/avif">
+                    <source srcset="./assets/images/gena.webp" type="image/webp">
+                    <img src="./assets/images/gena.jpg" alt="Review image">
+                  </picture>
+                </div>
+              </div>
+            </div>
+            <div class="review__inner review-text-slider swiper" data-animate-on-scroll
+              data-animate-class="fade-in-right" data-animate-delay="900ms">
+              <div class="review-text-slider__wrapper swiper-wrapper">
+                <div class="review-text-slide swiper-slide">
+                  <div class="review-text-slide__body">
+                    <p>EFood has the most intriguing food order system in the country. UI in both their app and web Is
+                      very simple and easy to use, enhancing the UX. Their delivery men are also quite professional and
+                      knows the neighborhood well. Till now I never had to guide them to my address for delivery;</p>
+                  </div>
+                  <div class="review-text-slide__footer">
+                    <h6 class="text-normal text-color-primary">Anglina Jole</h6>
+                    <p class="text-small text-color-light review-text-slide__caption">Food lover</p>
+                  </div>
+                </div>
+
+                <div class="review-text-slide swiper-slide">
+                  <div class="review-text-slide__body">
+                    <p>EFood has the most intriguing food order system in the country. UI in both their app and web Is
+                      very simple and easy to use, enhancing the UX. Their delivery men are also quite professional and
+                      knows the neighborhood well. Till now I never had to guide them to my address for delivery;</p>
+                  </div>
+                  <div class="review-text-slide__footer">
+                    <h6 class="text-normal text-color-primary">Gena Bukin</h6>
+                    <p class="text-small text-color-light review-text-slide__caption">Hattrick</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="review-text-slider__navigation">
+                <div class="review-text-slider__arrow review-text-slider__arrow_prev icon">
+                  <svg>
+                    <use xlink:href="./assets/images/icons.svg#slider-prev"></use>
+                  </svg>
+                </div>
+                <div class="review-text-slider__arrow review-text-slider__arrow_next icon">
+                  <svg>
+                    <use xlink:href="./assets/images/icons.svg#slider-next"></use>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section_subscribe" data-animate-on-scroll data-animate-class="fade-in-bottom">
+        <div class="container">
+          <div class="subscribe">
+            <h2 class="text-level-2 text-color-white">Subscribe to get the Latest Offer</h2>
+            <p class="text-color-white subscribe__text">Get our daily updates by subscribing to our newspaper, please
+              drop
+              your email below</p>
+            <form id="form_subscribe" class="subscribe__form">
+              <div class="field-box">
+                <div class="field">
+                  <input type="text" inputmode="email" class="field__input" name="email"
+                    placeholder="Enter your email addres" value="">
+                  <button class="button button_primary button_big" type="submit">
+                    <span class="icon">
+                      <svg>
+                        <use xlink:href="./assets/images/icons.svg#subscribe"></use>
+                      </svg>
+                    </span>
+                    <span class="text-normal weight-500">Subscribe</span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer overflow-h">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__description" data-animate-on-scroll data-animate-class="fade-in-left"
+            data-animate-delay="300ms">
+            <div class="footer__logo logo icon">
+              <svg>
+                <use xlink:href="./assets/images/icons.svg#logo"></use>
+              </svg>
+            </div>
+
+            <ul class="footer__address">
+              <li><a href="#" class="flex items-center text-small">
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="./assets/images/icons.svg#location"></use>
+                    </svg>
+                  </span>
+                  <span>Dhaka, Bangladesh</span>
+                </a></li>
+              <li><a href="tel:#" class="flex items-center text-small">
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="./assets/images/icons.svg#call"></use>
+                    </svg>
+                  </span>
+                  <span>0943833399</span>
+                </a></li>
+              <li><a href="mailto:#" class="flex items-center text-small">
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="./assets/images/icons.svg#message"></use>
+                    </svg>
+                  </span>
+                  <span>support@efood.com</span>
+                </a></li>
+            </ul>
+
+            <ul class="social footer__social">
+              <li>
+                <span class="icon">
+                  <svg>
+                    <use xlink:href="./assets/images/icons.svg#facebook"></use>
+                  </svg>
+                </span>
+              </li>
+
+              <li>
+                <span class="icon">
+                  <svg>
+                    <use xlink:href="./assets/images/icons.svg#twitter"></use>
+                  </svg>
+                </span>
+              </li>
+
+              <li>
+                <span class="icon">
+                  <svg>
+                    <use xlink:href="./assets/images/icons.svg#instagram"></use>
+                  </svg>
+                </span>
+              </li>
+
+              <li>
+                <span class="icon">
+                  <svg>
+                    <use xlink:href="./assets/images/icons.svg#pinterset"></use>
+                  </svg>
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__items">
+            <div class="footer-list footer__list" data-animate-on-scroll data-animate-class="fade-in-bottom"
+              data-animate-delay="500ms">
+              <h6 class="text-big weight-500">Service</h6>
+              <ul class="footer-list__inner">
+                <li><a href="#">How it works</a></li>
+                <li><a href="#">Home delivery</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Menu</a></li>
+              </ul>
+            </div>
+            <div class="footer-list footer__list" data-animate-on-scroll data-animate-class="fade-in-bottom"
+              data-animate-delay="700ms">
+              <h6 class="text-big weight-500">Company</h6>
+              <ul class="footer-list__inner">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Our trusted partner</a></li>
+                <li><a href="#">New users FAQ</a></li>
+              </ul>
+            </div>
+            <div class="footer-list footer__list" data-animate-on-scroll data-animate-class="fade-in-bottom"
+              data-animate-delay="900ms">
+              <h6 class="text-big weight-500">Supports</h6>
+              <ul class="footer-list__inner">
+                <li><a href="#">Help center</a></li>
+                <li><a href="#">Feedback</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">Terms conditins</a></li>
+              </ul>
+            </div>
+            <div class="footer-list footer__list" data-animate-on-scroll data-animate-class="fade-in-bottom"
+              data-animate-delay="1100ms">
+              <h6 class="text-big weight-500">Resources</h6>
+              <ul class="footer-list__inner">
+                <li><a href="#">Download app</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">What’s new</a></li>
+                <li><a href="#">Sitemap</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="footer__copyright">
+        <div class="container">
+          <div class="footer__copyright-body flex justify-between">
+            <span>© 2021 EFood - All rights reserved.</span>
+            <ul>
+              <li><a href="#">Privacy</a></li>
+              <li><a href="#">Security</a></li>
+              <li><a href="#">Terms</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <div class="modal" data-modal="hero">
+    <h2 class="modal__title text-level-3 text-center"><span class="text-color-primary">Title</span> in modal window
+    </h2>
+    <div class="modal__text">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi deserunt nesciunt provident corrupti vel sit
+        doloremque quasi, enim omnis, voluptas deleniti reprehenderit eum.</p>
+      <form action="#" id="form_request" class="modal__form form form-request">
+        <div class="form__inner">
+          <div class="field-box">
+            <span class="field-box__name">Email <span>*</span></span>
+            <div class="field">
+              <input type="email" inputmode="email" class="field__input" name="email"
+                placeholder="Enter your email addres" value="">
+            </div>
+            <div class="field-box__error" data-field-error></div>
+          </div>
+
+          <div class="field-box">
+            <span class="field-box__name">Name <span>*</span></span>
+            <div class="field">
+              <input type="text" class="field__input" name="name" placeholder="Enter your name" value="">
+            </div>
+            <div class="field-box__error" data-field-error></div>
+          </div>
+
+          <div class="field-box">
+            <span class="field-box__name">Phone</span>
+            <div class="field">
+              <input type="text" class="field__input" name="phone" placeholder="Enter your phone" value="">
+            </div>
+            <div class="field-box__error" data-field-error></div>
+          </div>
+
+          <div class="field-box">
+            <span class="field-box__name">Subject</span>
+            <div class="field">
+              <input type="text" class="field__input" name="subject" placeholder="Enter subject" value="">
+            </div>
+            <div class="field-box__error" data-field-error></div>
+          </div>
+
+          <div class="field-box">
+            <span class="field-box__name">Message</span>
+            <div class="field">
+              <textarea class="field__input" name="message" placeholder="Your message"></textarea>
+            </div>
+            <div class="field-box__error" data-field-error></div>
+          </div>
+        </div>
+
+        <div class="form__controls">
+          <button class="button button_primary button_big" type="submit">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="./assets/js/bundle.min.js" defer></script>
+</body>
+
+</html>
