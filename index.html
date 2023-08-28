@@ -62,7 +62,11 @@
 
 <body class="page">
   <div class="page__light">
-    <img src="./assets/images/background-light.svg" alt="Background lights">
+    <picture>
+      <source srcset="./assets/images/lights.avif" type="image/avif">
+      <source srcset="./assets/images/lights.webp" type="image/webp">
+      <img src="./assets/images/lights.png" alt="Background lights">
+    </picture>
   </div>
   <div class="loader">
     <img src="./assets/images/loader.svg" alt="Loader">
